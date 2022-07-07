@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="lib_jdk8_mapjfx-2.15.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/lib_jdk8_mapjfx-2.15.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

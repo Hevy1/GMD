@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <center>
+      <VBox prefHeight="800.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+         <children>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" styleClass="SearchBackground" stylesheets="@../style.css">
+               <center>
+                  <VBox maxHeight="100.0" maxWidth="600.0" prefHeight="200.0" prefWidth="600.0" styleClass="SearchVbox" stylesheets="@../style.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label opacity="0.8" text="QUELS SONT VOS SYMPTOMES?" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Bold" size="17.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin></Label>
+                        <TextField fx:id="searchBar" minHeight="40.0">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin></TextField>
+                        <Label text="Utilisez / pour OU, &amp; pour ET et _ pour n'importe quel caractère" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </center>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <right>
+                  <HBox prefHeight="150.0" prefWidth="150.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <ProgressIndicator fx:id="progressBar" minHeight="100.0" minWidth="100.0" prefHeight="159.0" prefWidth="150.0" progress="0.0">
+                           <HBox.margin>
+                              <Insets top="50.0" />
+                           </HBox.margin>
+                        </ProgressIndicator>
+                     </children></HBox>
+               </right>
+               <left>
+                  <HBox prefHeight="100.0" prefWidth="150.0" BorderPane.alignment="CENTER" />
+               </left>
+            </BorderPane>
+            <TabPane fx:id="tabPane" prefHeight="600.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                  <Tab styleClass="tab" text="Maladie">
+                      <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="10.0" layoutY="25.0" prefHeight="540.0" prefWidth="1175.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                 <children>
+                                    <HBox prefHeight="30.0" prefWidth="200.0">
+                                       <children>
+                                          <Label text="Qualité du mapping :">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label fx:id="mappingQualityMaladie" text="0%">
+                                             <HBox.margin>
+                                                <Insets right="100.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label text="Nombre de résultats :">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin></Label>
+                                          <Label fx:id="nbResMaladie" text="0" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <ScrollPane fx:id="maladieScrollPane" prefHeight="490.0" prefWidth="1175.0">
+                                       <content>
+                                          <Label fx:id="maladiesLabel" prefWidth="1175.0" text="" />
+                                       </content></ScrollPane>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                      </content>
+                  </Tab>
+                <Tab styleClass="tab" text="Médicaments causant ces symptomes">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="10.0" layoutY="25.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                 <children>
+                                    <HBox prefHeight="20.0" prefWidth="200.0">
+                                       <children>
+                                          <Label text="Qualité du mapping :">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label fx:id="mappingQualitySE" text="0%">
+                                             <HBox.margin>
+                                                <Insets right="100.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label text="Nombre de résultats :">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label fx:id="nbResSE" text="0" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <TableView fx:id="MedicCauseTable" prefHeight="510.0" prefWidth="1175.0">
+                                      <columns>
+                                        <TableColumn fx:id="medic" prefWidth="185.0" text="Medicament" />
+                                          <TableColumn fx:id="symptome" prefWidth="650.0" text="Symptome" />
+                                          <TableColumn fx:id="proba" prefWidth="150.0" text="Probabilité" />
+                                          <TableColumn fx:id="sourceCause" prefWidth="210.0" text="Source" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                 <Tab fx:id="lastTab" styleClass="tab" text="Médicaments soignant ces symptomes">
+                    <content>
+                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="10.0" layoutY="25.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                 <children>
+                                    <HBox prefHeight="20.0" prefWidth="200.0">
+                                       <children>
+                                          <Label text="Qualité du mapping :">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label fx:id="mappingQualityIndic" text="0%">
+                                             <HBox.margin>
+                                                <Insets right="100.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label text="Nombre de résultats :">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label fx:id="nbResIndic" text="0" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" />
+                                       </padding>
+                                    </HBox>
+                                    <TableView fx:id="MedicSoinTable" prefHeight="510.0" prefWidth="1175.0">
+                                      <columns>
+                                        <TableColumn fx:id="idMedic" prefWidth="150.0" text="Médicament" />
+                                        <TableColumn fx:id="sideEffect1" prefWidth="402.0" text="Symptôme" />
+                                          <TableColumn fx:id="sideEffect2" prefWidth="402.0" text="Synonyme" />
+                                          <TableColumn fx:id="sourceSoignant" prefWidth="230.0" text="Source" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                    </content>
+                 </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

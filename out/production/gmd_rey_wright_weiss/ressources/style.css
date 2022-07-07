@@ -1,0 +1,66 @@
+.SearchBackground
+{
+    -fx-background-color: #330033;
+}
+
+.SearchVbox
+{
+	-fx-font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+
+.tab {
+    -fx-pref-width: 400;
+    -fx-pref-height: 50;
+
+    -fx-background-insets: 0.0;
+    -fx-background-radius: 0.0;
+    -fx-background-color: #17181B;
+
+    -fx-alignment:center;
+}
+
+.tab:selected {
+    -fx-background-color: white;
+    -fx-text-base-color: black;
+}
+.tab:focused {
+    -fx-focus-color: transparent;
+}
+
+#lastTab:selected {
+    -fx-pref-width: 380;
+}
+
+.tab-header-background {
+    -fx-background-color:transparent
+}
+
+.tab-pane{
+    -fx-text-base-color: white;
+    -fx-background-color: white;
+}
+
+.tab-down-button {
+-fx-padding: 0;
+}
+
+.tab-down-button .arrow {
+-fx-padding: 0;
+}
+
+.tab-pane:top *.tab-header-area {
+    -fx-background-insets: 0, 0 0 1 0;
+ /* -fx-padding: 0.416667em 0.166667em 0.0em 0.833em; /* 5 2 0 10 */
+    -fx-padding: 0.0em 0.166667em 0.0em 0.0em;/* overridden as 5 2 0 0 */
+}
+
+
+.tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label {
+    -fx-alignment: CENTER;
+     -fx-pref-width: 400;
+}
+
+#maladieScrollPane .content {
+    -fx-background-color: #bfbfbf;
+}
